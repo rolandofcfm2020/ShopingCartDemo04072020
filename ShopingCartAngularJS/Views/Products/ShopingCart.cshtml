@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "ShopingCart";
+}
+    <script src="~/Scripts/Products/ShopingCartCtrl.js"></script>
+
+    <div ng-controller="shopingCartCtrl">
+        <h2>{{mensajeBienvenida}}</h2>
+
+
+        <h3>Selecciona el producto</h3>
+        @*https://stackoverflow.com/questions/28671629/how-to-update-the-ng-model-when-using-ng-options-in-angularjs?answertab=oldest#tab-top*@
+        <select class="input-sm" data-ng-model="selectedItem"
+                ng-options="item as item.Name for item in items"> </select>
+        <button class="btn btn-primary" ng-click="addProduct()">Agregar producto</button>
+
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="sc in shopingCart">
+                    <td>{{sc.Name}}</td>
+                    <td>{{sc.Price | currency}}</td>
+                    <td><input class="input-sm" ng-model="sc.Quantity" /></td>
+                    <td>{{sc.Price * sc.Quantity | currency}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{getTotal() | currency}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <br />
+
+        <button class="btn btn-success" ng-click="save()">Procesar</button>
+    </div>

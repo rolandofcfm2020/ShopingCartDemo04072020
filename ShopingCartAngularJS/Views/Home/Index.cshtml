@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+    <script src="~/Scripts/Home/Index/IndexCtrl.js"></script>
+    <div ng-controller="indexCtrl">
+        <div class="jumbotron">
+            <h1>Shopping Cart</h1>
+            <p class="lead">
+                Este mensaje te lo manda angularjs : {{message}}
+                <button class="btn btn-success" ng-click="saludarNombre()">Haz click en mi</button>
+
+
+        </div>
+        <br />
+        <h4>{{saludo}}</h4>
+        <input class="input-sm" type="Number" ng-model="numero1" />
+        <input class="input-sm" type="Number" ng-model="numero2" />
+        <button class="btn btn-warning" ng-click="sumar()">HAZ LA SUMA</button>
+
+    </div>
