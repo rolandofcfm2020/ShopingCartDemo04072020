@@ -1,4 +1,4 @@
-﻿var angularApp = angular.module('angularApp', []);
+﻿
 
 interface ShopingCartScope extends ng.IScope {
 

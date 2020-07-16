@@ -10,8 +10,8 @@ interface ScopeIndex extends ng.IScope {
 }
 angularApp.controller('indexCtrl', function ($scope: ScopeIndex, $http: ng.IHttpService) {
 
-    $scope.message = "Hola, gracias por venir jejex";
-    $scope.saludo = "Hola jeje";
+    $scope.message = "Hola, gracias por venir a mi página";
+    $scope.saludo = "Hola";
 
     $scope.saludarNombre = function () {
         alert("Hola Rolando");

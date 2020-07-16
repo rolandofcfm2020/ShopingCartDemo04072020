@@ -1,4 +1,14 @@
 var angularApp = angular.module('angularApp', []);
+angularApp.controller('indexCtrl', function ($scope, $http) {
+    $scope.message = "Hola, gracias por venir a mi página";
+    $scope.saludo = "Hola";
+    $scope.saludarNombre = function () {
+        alert("Hola Rolando");
+    };
+    $scope.sumar = function () {
+        alert("La suma es:" + ($scope.numero1 + $scope.numero2));
+    };
+});
 angularApp.controller('shopingCartCtrl', function ($scope, $http) {
     //----------------------------FUNCIONES
     $scope.mensajeBinvenida = "Gracias por usar el carrito de compras";
@@ -48,4 +58,4 @@ angularApp.controller('shopingCartCtrl', function ($scope, $http) {
     //-----------------------------Llamada de funciones cuando se carga la pagina
     $scope.getAllProducts();
 });
-//# sourceMappingURL=ShopingCartCtrl.js.map
+//# sourceMappingURL=app.js.map
